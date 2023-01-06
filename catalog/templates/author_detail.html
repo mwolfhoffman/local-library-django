@@ -14,7 +14,7 @@
     {% for book in books %}
       <hr>
       <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
-        {{ book.title }}
+        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
       </p>
     {% endfor %}
   </div>
