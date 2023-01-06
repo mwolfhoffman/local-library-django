@@ -34,7 +34,6 @@ def books(request):
     """View function for books list page of site."""
 
     books = Book.objects.all()
-    print(books)
     context = {
         'book_list': books,
     }
@@ -50,3 +49,25 @@ def book_detail(request, pk):
     }
 
     return render(request, 'book_detail.html', context=context)
+
+
+def authors(request):
+    """View function for authors list page of site."""
+
+    authors = Author.objects.all()
+    context = {
+        'author_list': authors,
+    }
+
+    return render(request, 'author_list.html', context=context)
+
+
+def author_detail(request, pk):
+    """View function for author detail page of site."""
+    author = Author.objects.get(id=pk)
+    books = Book.objects.filter(author=pk)
+    context = {
+        'author': author,
+        'books': books
+    }
+    return render(request, 'author_detail.html', context=context)
