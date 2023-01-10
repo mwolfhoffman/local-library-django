@@ -90,3 +90,15 @@ def my_books(request):
     }
 
     return render(request, 'my_books.html', context=context)
+
+
+@permission_required('user.is_staff', raise_exception=True)
+@login_required
+def all_borrowed(request):
+    """View function for all borrowed books page of site"""
+    borrowed_books = BookInstance.objects.filter(status='o')
+
+    context = {
+        'borrowed_books': borrowed_books
+    }
+    return render(request, 'borrowed.html', context=context)
