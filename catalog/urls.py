@@ -7,5 +7,5 @@ urlpatterns = [
     path('book/<int:pk>', views.book_detail, name='book-detail'),
     path('authors/', views.authors, name='authors'),
     path('authors/<int:pk>', views.author_detail, name='author-detail'),
-    path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+    path('mybooks/', views.my_books, name='my-borrowed'),
 ]
