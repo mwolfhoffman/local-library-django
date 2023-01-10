@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Book, Author, BookInstance, Genre
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 
 def index(request):
@@ -78,6 +78,7 @@ def author_detail(request, pk):
     return render(request, 'author_detail.html', context=context)
 
 
+@permission_required('catalog.can_mark_returned', raise_exception=True)
 @login_required
 def my_books(request):
     """View function for my books page of site."""
@@ -89,4 +90,3 @@ def my_books(request):
     }
 
     return render(request, 'my_books.html', context=context)
-
