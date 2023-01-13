@@ -18,6 +18,7 @@ Django application that creates a Library with Books, Authors, and BookInstances
 
 ## To Deploy
 1. `python3 manage.py check --deploy`
+1. Follow instructions [here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment) or [here](https://docs.djangoproject.com/en/4.0/howto/deployment/).
 
 ## Add Books, Authors, etc
 1.  `python manage.py createsuperuser`
