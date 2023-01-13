@@ -16,6 +16,8 @@ Django application that creates a Library with Books, Authors, and BookInstances
 ## To Test
 1.  `python manage.py test`
 
+## To Deploy
+1. `python3 manage.py check --deploy`
 
 ## Add Books, Authors, etc
 1.  `python manage.py createsuperuser`
