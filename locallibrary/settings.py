@@ -145,9 +145,8 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-ALLOWED_HOSTS = ['.railway.app', 'localhost']
-CSRF_TRUSTED_ORIGINS = ['.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
+ALLOWED_HOSTS = ['web-production-c47f.up.railway.app', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-c47f.up.railway.app']
 ##############################################
 ##############################################
 ##############################################

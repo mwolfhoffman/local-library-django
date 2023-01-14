@@ -14,8 +14,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-ALLOWED_HOSTS = ['.railway.app', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['.railway.app']
+ALLOWED_HOSTS = ['.railway.app', '127.0.0.1']   ### You should replace this with your railway URL
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
 DEBUG = os.getenv('DEBUG', False) == 'True'
 ##############################################
