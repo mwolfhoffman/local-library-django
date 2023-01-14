@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo 'Preparing Deployment...'
-echo "web: python manage.py migrate && gunicorn locallibrary.wsgi" > "Procfile"
+echo "web: python manage.py collectstatic  && python manage.py migrate && gunicorn locallibrary.wsgi" > "Procfile"
 echo 'Created Procfile'
 pip3 install gunicorn dj-database-url psycopg2-binary whitenoise
 echo "
