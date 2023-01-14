@@ -1,6 +1,6 @@
 # Library
 
-Django application that creates a Library with Books, Authors, and BookInstances that can be checked out.
+Django application that creates a Library with Books to be checked out.
 
 ## To Install
 1. `python3 -m venv venv`
