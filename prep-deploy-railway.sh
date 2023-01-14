@@ -26,6 +26,7 @@ echo "python-3.10.2" > "runtime.txt"
 echo "Created runtime.txt"
 pip3 freeze > requirements.txt
 echo "Created requirements.txt"
+python3 manage.py collectstatic
 python3 manage.py check --deploy
 echo "
 ##############################################
